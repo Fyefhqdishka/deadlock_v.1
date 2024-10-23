@@ -1,0 +1,3 @@
+[submodule "internal/ui-submodule"]
+	path = internal/ui-submodule
+	url = https://github.com/fek1ss/project-digital-life
