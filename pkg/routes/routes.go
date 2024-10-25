@@ -2,6 +2,7 @@ package routes
 
 import (
 	"database/sql"
+	"github.com/Fyefhqdishka/deadlock_v.1/internal/app/chat"
 	"github.com/Fyefhqdishka/deadlock_v.1/internal/app/post"
 	"github.com/gorilla/mux"
 	"log/slog"
@@ -21,5 +22,7 @@ func PostRoutes(r *mux.Router, db *sql.DB, logger *slog.Logger) {
 	postCtrl := post.NewControllerPost(postRepo, logger)
 
 	r.HandleFunc("/api/create", postCtrl.Create).Methods("POST")
-	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static/"))))
+	r.HandleFunc("/api/get", postCtrl.Get).Methods("GET")
+	r.HandleFunc("/ws", chat.HandleConnections)
+	r.PathPrefix("/public/").Handler(http.StripPrefix("/public/", http.FileServer(http.Dir("./public/"))))
 }

@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"fmt"
+	"github.com/Fyefhqdishka/deadlock_v.1/internal/app/chat"
 	"github.com/Fyefhqdishka/deadlock_v.1/pkg/routes"
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
@@ -43,6 +44,8 @@ func main() {
 
 	routes.RegisterRoutes(r, db, logger)
 
+	go chat.HandleMessages()
+
 	port := ":8000"
 	if err := http.ListenAndServe(port, r); err != nil {
 		log.Fatal()
@@ -57,7 +60,9 @@ func initLogging() *slog.Logger {
 		os.Exit(1)
 	}
 
-	handler := slog.NewTextHandler(logfile, nil)
+	handler := slog.NewTextHandler(logfile, &slog.HandlerOptions{
+		Level: slog.LevelDebug,
+	})
 	return slog.New(handler)
 }
 
