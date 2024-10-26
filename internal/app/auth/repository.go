@@ -3,43 +3,44 @@ package auth
 import (
 	"database/sql"
 	"fmt"
+	"github.com/Fyefhqdishka/deadlock_v.1/internal/app/user"
 	"log/slog"
 )
 
 type Repository struct {
 	DB     *sql.DB
-	logger *slog.Logger
+	Logger *slog.Logger
 }
 
 func NewRepository(db *sql.DB, logger *slog.Logger) *Repository {
 	return &Repository{
 		DB:     db,
-		logger: logger,
+		Logger: logger,
 	}
 }
 
-func (m *Repository) RegistrationUser(auth *Auth) error {
-	m.logger.Debug("starting registration user")
+func (m *Repository) RegistrationUser(user user.User) error {
+	m.Logger.Debug("starting registration user")
 
 	stmt, err := m.DB.Prepare("INSERT INTO users (name, username, email, password, gender, dob) VALUES ($1,$2,$3,$4,$5,$6)")
 	if err != nil {
-		m.logger.Error("error preparing statement")
+		m.Logger.Error("error preparing statement", "err:", err)
 		return err
 	}
 	defer stmt.Close()
 
-	_, err = stmt.Exec(auth.UserAuth.Name, auth.UserAuth.Username, auth.UserAuth.Email, auth.UserAuth.Password, auth.UserAuth.Gender, auth.UserAuth.Dob)
+	_, err = stmt.Exec(user.Name, user.Username, user.Email, user.Password, user.Gender, user.Dob)
 	if err != nil {
-		m.logger.Error("error executing statement")
+		m.Logger.Error("error executing statement", "err:", err)
 		return err
 	}
 
-	m.logger.Debug("registration user finished")
+	m.Logger.Debug("registration user finished", "username", user.Username)
 	return nil
 }
 
 func (m *Repository) LoginUser(username, password string) (string, error) {
-	m.logger.Debug("starting login user")
+	m.Logger.Debug("starting login user")
 
 	var UserID string
 	var passwordHash string
@@ -47,15 +48,19 @@ func (m *Repository) LoginUser(username, password string) (string, error) {
 	stmt := `SELECT id, password FROM users WHERE username = $1`
 	err := m.DB.QueryRow(stmt, username).Scan(&UserID, &passwordHash)
 	if err != nil {
-		m.logger.Error("error executing statement")
+		if err == sql.ErrNoRows {
+			m.Logger.Warn("пользователь не найден", "username", username)
+			return "", fmt.Errorf("пользователь не найден")
+		}
+		m.Logger.Error("ошибка выполнения SQL-запроса при логине", "err", err)
 		return "", err
 	}
 
-	if CheckPasswordHash(password, passwordHash) {
-		m.logger.Info("Пользователь успешно аутентифицирован", "username", username)
+	if !CheckPasswordHash(password, passwordHash) {
+		m.Logger.Info("Пользователь успешно аутентифицирован", "username", username)
 		return UserID, nil
-	} else {
-		m.logger.Warn("Неверный пароль при аутентификации", "username", username)
-		return "", fmt.Errorf("неверный пароль")
 	}
+
+	m.Logger.Info("пользователь успешно аутентифицирован", "username", username)
+	return UserID, nil
 }
