@@ -1,0 +1,131 @@
+time=2024-10-29T13:39:47.770+05:00 level=WARN msg="Токен не найден" error="http: named cookie not present"
+time=2024-10-29T13:40:18.368+05:00 level=INFO msg="начало обработки Авторизации"
+time=2024-10-29T13:40:18.368+05:00 level=DEBUG msg="Перед вызовом LoginUser" username=Anuar
+time=2024-10-29T13:40:18.368+05:00 level=DEBUG msg="starting login user"
+time=2024-10-29T13:40:18.469+05:00 level=INFO msg="пользователь успешно аутентифицирован" username=Anuar
+time=2024-10-29T13:40:18.470+05:00 level=INFO msg="Пользователь успешно аутентифицирован" username=Anuar
+time=2024-10-29T13:40:24.393+05:00 level=INFO msg="обработка запроса в БД"
+time=2024-10-29T13:40:24.393+05:00 level=DEBUG msg="Обработка запроса на добавление поста в БД"
+time=2024-10-29T13:40:24.401+05:00 level=ERROR msg="Ошибка при добавлении нового поста"
+time=2024-10-29T13:40:24.401+05:00 level=ERROR msg="ошикба при обработки запроса"
+time=2024-10-29T13:44:51.998+05:00 level=INFO msg="обработка запроса в БД"
+time=2024-10-29T13:44:51.999+05:00 level=DEBUG msg="Обработка запроса на добавление поста в БД"
+time=2024-10-29T13:44:52.005+05:00 level=ERROR msg="Ошибка при добавлении нового поста"
+time=2024-10-29T13:44:52.005+05:00 level=ERROR msg="ошикба при обработки запроса"
+time=2024-10-29T13:45:05.386+05:00 level=INFO msg="начало обработки Авторизации"
+time=2024-10-29T13:45:05.388+05:00 level=DEBUG msg="Перед вызовом LoginUser" username=Anuar
+time=2024-10-29T13:45:05.388+05:00 level=DEBUG msg="starting login user"
+time=2024-10-29T13:45:05.483+05:00 level=INFO msg="пользователь успешно аутентифицирован" username=Anuar
+time=2024-10-29T13:45:05.483+05:00 level=INFO msg="Пользователь успешно аутентифицирован" username=Anuar
+time=2024-10-29T13:45:11.381+05:00 level=INFO msg="обработка запроса в БД"
+time=2024-10-29T13:45:11.381+05:00 level=DEBUG msg="Обработка запроса на добавление поста в БД"
+time=2024-10-29T13:45:11.381+05:00 level=ERROR msg="Ошибка при добавлении нового поста"
+time=2024-10-29T13:45:11.381+05:00 level=ERROR msg="ошикба при обработки запроса"
+time=2024-10-29T13:49:46.769+05:00 level=INFO msg="обработка запроса в БД"
+time=2024-10-29T13:49:46.769+05:00 level=WARN msg="userID не найден в контексте"
+time=2024-10-29T13:50:07.848+05:00 level=INFO msg="начало обработки Авторизации"
+time=2024-10-29T13:50:07.848+05:00 level=DEBUG msg="Перед вызовом LoginUser" username=Anuar
+time=2024-10-29T13:50:07.848+05:00 level=DEBUG msg="starting login user"
+time=2024-10-29T13:50:07.904+05:00 level=INFO msg="пользователь успешно аутентифицирован" username=Anuar
+time=2024-10-29T13:50:07.904+05:00 level=INFO msg="Пользователь успешно аутентифицирован" username=Anuar
+time=2024-10-29T13:50:12.406+05:00 level=INFO msg="обработка запроса в БД"
+time=2024-10-29T13:50:12.406+05:00 level=WARN msg="userID не найден в контексте"
+time=2024-10-29T15:08:31.974+05:00 level=INFO msg="обработка запроса в БД"
+time=2024-10-29T15:08:31.974+05:00 level=DEBUG msg="Обработка запроса на добавление поста в БД"
+time=2024-10-29T15:08:31.978+05:00 level=DEBUG msg="Добавление поста в БД прошло успешно"
+time=2024-10-29T15:09:30.266+05:00 level=INFO msg="начало обработки Авторизации"
+time=2024-10-29T15:09:30.266+05:00 level=DEBUG msg="Перед вызовом LoginUser" username=jdoe
+time=2024-10-29T15:09:30.266+05:00 level=DEBUG msg="starting login user"
+time=2024-10-29T15:09:30.267+05:00 level=WARN msg="неверный пароль для пользователя" username=jdoe
+time=2024-10-29T15:09:30.267+05:00 level=ERROR msg="ошибка при аутентификации пользователя" username=jdoe error="неверный пароль"
+time=2024-10-29T15:09:55.170+05:00 level=INFO msg="начало обработки Авторизации"
+time=2024-10-29T15:09:55.170+05:00 level=DEBUG msg="Перед вызовом LoginUser" username=jdoe
+time=2024-10-29T15:09:55.170+05:00 level=DEBUG msg="starting login user"
+time=2024-10-29T15:09:55.170+05:00 level=WARN msg="неверный пароль для пользователя" username=jdoe
+time=2024-10-29T15:09:55.170+05:00 level=ERROR msg="ошибка при аутентификации пользователя" username=jdoe error="неверный пароль"
+time=2024-10-29T15:10:31.013+05:00 level=DEBUG msg="начала обработки регистрации пользователя"
+time=2024-10-29T15:10:31.069+05:00 level=DEBUG msg="starting registration user"
+time=2024-10-29T15:10:31.088+05:00 level=DEBUG msg="registration user finished" username=Damir
+time=2024-10-29T15:10:31.088+05:00 level=DEBUG msg="User successfully registered" username=Damir
+time=2024-10-29T15:10:43.109+05:00 level=INFO msg="начало обработки Авторизации"
+time=2024-10-29T15:10:43.109+05:00 level=DEBUG msg="Перед вызовом LoginUser" username=Damir
+time=2024-10-29T15:10:43.109+05:00 level=DEBUG msg="starting login user"
+time=2024-10-29T15:10:43.163+05:00 level=INFO msg="пользователь успешно аутентифицирован" username=Damir
+time=2024-10-29T15:10:43.164+05:00 level=INFO msg="Пользователь успешно аутентифицирован" username=Damir
+time=2024-10-29T15:10:57.653+05:00 level=INFO msg="обработка запроса в БД"
+time=2024-10-29T15:10:57.653+05:00 level=DEBUG msg="Обработка запроса на добавление поста в БД"
+time=2024-10-29T15:10:57.663+05:00 level=DEBUG msg="Добавление поста в БД прошло успешно"
+time=2024-10-29T15:34:01.776+05:00 level=WARN msg="Токен не найден" error="http: named cookie not present"
+time=2024-10-29T15:35:04.299+05:00 level=INFO msg="обработка запроса в БД"
+time=2024-10-29T15:35:04.299+05:00 level=DEBUG msg="Обработка запроса на добавление поста в БД"
+time=2024-10-29T15:35:04.301+05:00 level=DEBUG msg="Добавление поста в БД прошло успешно"
+time=2024-10-29T15:35:13.954+05:00 level=WARN msg="Токен не найден" error="http: named cookie not present"
+time=2024-10-29T15:35:15.363+05:00 level=WARN msg="Токен не найден" error="http: named cookie not present"
+time=2024-10-29T15:38:29.084+05:00 level=ERROR msg="Ошибка: userID не найден в контексте" err:=<nil>
+time=2024-10-29T15:42:09.693+05:00 level=INFO msg="начало обработки Авторизации"
+time=2024-10-29T15:42:09.693+05:00 level=DEBUG msg="Перед вызовом LoginUser" username=Anuar
+time=2024-10-29T15:42:09.693+05:00 level=DEBUG msg="starting login user"
+time=2024-10-29T15:42:09.746+05:00 level=WARN msg="неверный пароль для пользователя" username=Anuar
+time=2024-10-29T15:42:09.746+05:00 level=ERROR msg="ошибка при аутентификации пользователя" username=Anuar error="неверный пароль"
+time=2024-10-29T15:42:13.590+05:00 level=INFO msg="начало обработки Авторизации"
+time=2024-10-29T15:42:13.590+05:00 level=DEBUG msg="Перед вызовом LoginUser" username=Anuar
+time=2024-10-29T15:42:13.590+05:00 level=DEBUG msg="starting login user"
+time=2024-10-29T15:42:13.642+05:00 level=INFO msg="пользователь успешно аутентифицирован" username=Anuar
+time=2024-10-29T15:42:13.644+05:00 level=INFO msg="Пользователь успешно аутентифицирован" username=Anuar
+time=2024-10-29T15:42:15.098+05:00 level=ERROR msg="Ошибка: userID не найден в контексте" err:=<nil>
+time=2024-10-29T15:48:30.672+05:00 level=WARN msg="Токен не найден в URL"
+time=2024-10-29T15:51:18.669+05:00 level=WARN msg="Токен не найден в URL"
+time=2024-10-29T15:51:36.973+05:00 level=INFO msg="начало обработки Авторизации"
+time=2024-10-29T15:51:36.974+05:00 level=DEBUG msg="Перед вызовом LoginUser" username=Anuar
+time=2024-10-29T15:51:36.974+05:00 level=DEBUG msg="starting login user"
+time=2024-10-29T15:51:37.031+05:00 level=INFO msg="пользователь успешно аутентифицирован" username=Anuar
+time=2024-10-29T15:51:37.031+05:00 level=INFO msg="Пользователь успешно аутентифицирован" username=Anuar
+time=2024-10-29T15:51:38.637+05:00 level=WARN msg="Токен не найден в URL"
+time=2024-10-29T16:03:11.119+05:00 level=WARN msg="Токен не найден в URL"
+time=2024-10-29T16:04:21.883+05:00 level=WARN msg="Токен не найден в URL"
+time=2024-10-29T16:04:25.633+05:00 level=WARN msg="Токен не найден в URL"
+time=2024-10-29T16:05:21.340+05:00 level=WARN msg="Токен не найден в URL"
+time=2024-10-29T16:05:22.662+05:00 level=WARN msg="Токен не найден в URL"
+time=2024-10-29T16:05:26.382+05:00 level=WARN msg="Токен не найден в URL"
+time=2024-10-29T16:05:51.521+05:00 level=WARN msg="Токен не найден в URL"
+time=2024-10-29T16:08:42.490+05:00 level=WARN msg="Токен не найден в URL"
+time=2024-10-29T16:08:51.638+05:00 level=WARN msg="Токен не найден в URL"
+time=2024-10-29T17:07:55.859+05:00 level=INFO msg="начало обработки Авторизации"
+time=2024-10-29T17:08:44.162+05:00 level=INFO msg="начало обработки Авторизации"
+time=2024-10-29T17:08:44.177+05:00 level=ERROR msg="ошибка декодирования JSON" error="invalid character 'u' looking for beginning of object key string"
+time=2024-10-29T17:09:06.716+05:00 level=INFO msg="начало обработки Авторизации"
+time=2024-10-29T17:09:06.716+05:00 level=ERROR msg="ошибка декодирования JSON" error="invalid character 'U' looking for beginning of object key string"
+time=2024-10-29T17:09:19.533+05:00 level=INFO msg="начало обработки Авторизации"
+time=2024-10-29T17:10:15.722+05:00 level=INFO msg="начало обработки Авторизации"
+time=2024-10-29T17:10:15.722+05:00 level=DEBUG msg="Перед вызовом LoginUser" username=Anuar
+time=2024-10-29T17:10:15.723+05:00 level=DEBUG msg="starting login user"
+time=2024-10-29T17:10:15.781+05:00 level=WARN msg="неверный пароль для пользователя" username=Anuar
+time=2024-10-29T17:10:15.781+05:00 level=ERROR msg="ошибка при аутентификации пользователя" username=Anuar error="неверный пароль"
+time=2024-10-29T17:10:28.544+05:00 level=INFO msg="начало обработки Авторизации"
+time=2024-10-29T17:10:28.544+05:00 level=DEBUG msg="Перед вызовом LoginUser" username=Anuar
+time=2024-10-29T17:10:28.544+05:00 level=DEBUG msg="starting login user"
+time=2024-10-29T17:10:28.597+05:00 level=INFO msg="пользователь успешно аутентифицирован" username=Anuar
+time=2024-10-29T17:10:28.599+05:00 level=INFO msg="Пользователь успешно аутентифицирован" username=Anuar
+time=2024-10-29T17:12:59.282+05:00 level=INFO msg="начало обработки Авторизации"
+time=2024-10-29T17:12:59.283+05:00 level=DEBUG msg="Перед вызовом LoginUser" username=Anuar
+time=2024-10-29T17:12:59.283+05:00 level=DEBUG msg="starting login user"
+time=2024-10-29T17:12:59.336+05:00 level=INFO msg="пользователь успешно аутентифицирован" username=Anuar
+time=2024-10-29T17:12:59.336+05:00 level=INFO msg="Пользователь успешно аутентифицирован" username=Anuar
+time=2024-10-29T17:14:25.809+05:00 level=INFO msg="обработка запроса в БД"
+time=2024-10-29T17:14:25.809+05:00 level=DEBUG msg="Обработка запроса на добавление поста в БД"
+time=2024-10-29T17:14:25.813+05:00 level=DEBUG msg="Добавление поста в БД прошло успешно"
+time=2024-10-29T17:14:52.169+05:00 level=INFO msg="обработка запроса в БД"
+time=2024-10-29T17:14:52.170+05:00 level=DEBUG msg="Обработка запроса на добавление поста в БД"
+time=2024-10-29T17:14:52.178+05:00 level=DEBUG msg="Добавление поста в БД прошло успешно"
+time=2024-10-29T17:14:53.117+05:00 level=INFO msg="обработка запроса в БД"
+time=2024-10-29T17:14:53.117+05:00 level=DEBUG msg="Обработка запроса на добавление поста в БД"
+time=2024-10-29T17:14:53.121+05:00 level=DEBUG msg="Добавление поста в БД прошло успешно"
+time=2024-10-29T17:14:54.116+05:00 level=INFO msg="обработка запроса в БД"
+time=2024-10-29T17:14:54.116+05:00 level=DEBUG msg="Обработка запроса на добавление поста в БД"
+time=2024-10-29T17:14:54.125+05:00 level=DEBUG msg="Добавление поста в БД прошло успешно"
+time=2024-10-29T17:14:55.082+05:00 level=INFO msg="обработка запроса в БД"
+time=2024-10-29T17:14:55.082+05:00 level=DEBUG msg="Обработка запроса на добавление поста в БД"
+time=2024-10-29T17:14:55.088+05:00 level=DEBUG msg="Добавление поста в БД прошло успешно"
+time=2024-10-29T17:16:11.829+05:00 level=ERROR msg="Ошибка при обновлении до WebSocket" error="websocket: the client is not using the websocket protocol: 'upgrade' token not found in 'Connection' header"
+time=2024-10-29T17:57:26.465+05:00 level=ERROR msg="ошибка декодирования json" error:="invalid character '\"' after object key:value pair"
+time=2024-10-29T17:57:56.755+05:00 level=ERROR msg="ошибка декодирования json" error:="json: cannot unmarshal string into Go struct field Dialog.dialogID of type int"

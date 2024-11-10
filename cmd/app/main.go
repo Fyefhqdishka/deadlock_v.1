@@ -44,7 +44,8 @@ func main() {
 
 	routes.RegisterRoutes(r, db, logger)
 
-	go chat.HandleMessages()
+	chatCtrl := chat.ControllerChat{DB: db, Logger: logger}
+	go chatCtrl.HandleMessages()
 
 	port := ":8000"
 	if err := http.ListenAndServe(port, r); err != nil {
