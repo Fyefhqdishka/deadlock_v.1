@@ -25,20 +25,53 @@ func NewControllerPost(repo RepositoryPost, logger *slog.Logger) *ControllerPost
 
 func (m *ControllerPost) Create(w http.ResponseWriter, r *http.Request) {
 	var post Post
-	UserId := "2ec3fddd-e9d9-4511-a5c4-e01d2536e398"
 
 	err := json.NewDecoder(r.Body).Decode(&post)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
-		m.logger.Error("ошибка декодирования json", "error:", err)
+		m.logger.Error(
+			"Create",
+			"ошибка декодирования json",
+			"error:", err,
+		)
+
 		return
 	}
 
-	m.logger.Info("обработка запроса в БД")
+	m.logger.Info(
+		"Create",
+		"обработка запроса в БД",
+	)
 
-	err = m.repo.PostCreate(post.Title, post.Content, UserId)
+	userID := r.Context().Value("user_id")
+	if userID == nil {
+		m.logger.Warn(
+			"Create",
+			"userID не найден в контексте",
+		)
+
+		http.Error(w, "Не авторизован", http.StatusUnauthorized)
+		return
+	}
+
+	userIDStr, ok := userID.(string)
+	if !ok {
+		m.logger.Warn(
+			"Create",
+			"userID не является строкой",
+		)
+
+		http.Error(w, "Не авторизован", http.StatusUnauthorized)
+		return
+	}
+
+	err = m.repo.PostCreate(post.Title, post.Content, userIDStr)
 	if err != nil {
-		m.logger.Error("ошикба при обработки запроса")
+		m.logger.Error(
+			"Create",
+			"ошибка при обработки запроса",
+		)
+
 		return
 	}
 
@@ -47,12 +80,20 @@ func (m *ControllerPost) Create(w http.ResponseWriter, r *http.Request) {
 }
 
 func (m *ControllerPost) Get(w http.ResponseWriter, r *http.Request) {
-	m.logger.Info("Обработка запроса на получение последних 10 постов")
+	m.logger.Info(
+		"Get",
+		"Обработка запроса на получение последних 10 постов",
+	)
 
 	posts, err := m.repo.PostGet()
 	if err != nil {
+		m.logger.Error(
+			"Get",
+			"ошибка при обработке запроса к БД",
+			"error:", err,
+		)
+		
 		http.Error(w, "Ошибка при получении постов", http.StatusInternalServerError)
-		m.logger.Error("ошибка при обработке запроса к БД", "error:", err)
 		return
 	}
 
