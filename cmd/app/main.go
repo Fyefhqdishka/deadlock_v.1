@@ -3,7 +3,6 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	"github.com/Fyefhqdishka/deadlock_v.1/internal/app/chat"
 	"github.com/Fyefhqdishka/deadlock_v.1/pkg/routes"
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
@@ -43,9 +42,6 @@ func main() {
 	r := mux.NewRouter()
 
 	routes.RegisterRoutes(r, db, logger)
-
-	chatCtrl := chat.ControllerChat{DB: db, Logger: logger}
-	go chatCtrl.HandleMessages()
 
 	port := ":8000"
 	if err := http.ListenAndServe(port, r); err != nil {
