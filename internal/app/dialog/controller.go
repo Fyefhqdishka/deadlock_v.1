@@ -11,13 +11,26 @@ type RepositoryDialog interface {
 	GetDialogs(UserID string) ([]Dialog, error)
 }
 
-type ControllerDialog struct {
-	repo   RepositoryDialog
-	logger *slog.Logger
+type DialogCreator interface {
+	CreateDialog(UserIDOne, UserIDTwo string) error
 }
 
-func NewControllerDialog(repo RepositoryDialog, logger *slog.Logger) *ControllerDialog {
-	return &ControllerDialog{repo: repo, logger: logger}
+type DialogGetter interface {
+	GetDialogs(UserID string) ([]Dialog, error)
+}
+
+type ControllerDialog struct {
+	dialogCreator DialogCreator
+	dialogGetter  DialogGetter
+	logger        *slog.Logger
+}
+
+func NewControllerDialog(dialogCreator DialogCreator, dialogGetter DialogGetter, logger *slog.Logger) *ControllerDialog {
+	return &ControllerDialog{
+		dialogCreator,
+		dialogGetter,
+		logger,
+	}
 }
 
 func (c *ControllerDialog) Create(w http.ResponseWriter, r *http.Request) {
@@ -62,7 +75,7 @@ func (c *ControllerDialog) Create(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err = c.repo.CreateDialog(userIDStr, dialog.UserIDTwo)
+	err = c.dialogCreator.CreateDialog(userIDStr, dialog.UserIDTwo)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -120,7 +133,7 @@ func (c *ControllerDialog) Get(w http.ResponseWriter, r *http.Request) {
 		"user_id:", UserIDStr,
 	)
 
-	dialogs, err := c.repo.GetDialogs(UserIDStr)
+	dialogs, err := c.dialogGetter.GetDialogs(UserIDStr)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -136,8 +149,3 @@ func (c *ControllerDialog) Get(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Ошибка при отправке ответа", http.StatusInternalServerError)
 	}
 }
-
-//interlocutorID := dil.UserIDTwo
-//if dil.UserIDOne == UserID {
-//interlocutorID = dil.UserIDOne
-//}

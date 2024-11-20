@@ -139,6 +139,7 @@ func (c *ControllerAuth) Login(w http.ResponseWriter, r *http.Request) {
 			"Login",
 			"ошибка при аутентификации пользователя",
 			"username", user.UserAuth.Username,
+			"password", user.UserAuth.Password,
 			"error", err,
 		)
 

@@ -14,16 +14,16 @@ func NewRepository(db *sql.DB, logger *slog.Logger) *Repository {
 	return &Repository{db, logger}
 }
 
-func (m *Repository) PostCreate(title, content string, user_id any) error {
-	m.Logger.Debug(
+func (r *Repository) PostCreate(title, content string, user_id any) error {
+	r.Logger.Debug(
 		"PostCreate",
 		"Обработка запроса на добавление поста в БД",
 	)
 
 	stmt := `INSERT INTO Posts (title, content, user_id) VALUES ($1, $2, $3)`
-	_, err := m.DB.Exec(stmt, title, content, user_id)
+	_, err := r.DB.Exec(stmt, title, content, user_id)
 	if err != nil {
-		m.Logger.Error(
+		r.Logger.Error(
 			"PostCreate",
 			"Ошибка при добавлении нового поста",
 		)
@@ -31,7 +31,7 @@ func (m *Repository) PostCreate(title, content string, user_id any) error {
 		return err
 	}
 
-	m.Logger.Debug(
+	r.Logger.Debug(
 		"PostCreate",
 		"Добавление поста в БД прошло успешно",
 	)
